@@ -20,6 +20,7 @@ namespace YShop.core.Specifications ////this class for each paerent class only
             AddIncludes(x => x.ProductType);
             AddIncludes(x => x.ProductBrand);
             AddOrderBy(x => x.Name);
+            ApplyPaging(param.PageSize *(param.PageIndex-1),param.PageSize);
 
             if (!string.IsNullOrEmpty(param.Sort))
             {
